@@ -32,5 +32,8 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.D)){
             transform.position += new Vector3(moveSpeed, 0, 0);
         }
+        if (Input.GetKey(KeyCode.Space)){
+            transform.position += new Vector3(0, moveSpeed*2, 0);
+        }
     }
 }
