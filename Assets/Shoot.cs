@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public GameObject bulletPrefab;
+public float bulletForce = 10f;
 
-    // Update is called once per frame
-    void Update()
+void Update()
+{
+    if (Input.GetKeyDown(KeyCode.R))
     {
-        
+        ShootBullet();
     }
+}
+
+void ShootBullet()
+{
+    GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+    Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+    bulletRb.AddForce(transform.forward * bulletForce, ForceMode.Impulse);
+}
+
 }
