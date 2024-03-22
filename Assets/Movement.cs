@@ -50,7 +50,10 @@ public class Movement : MonoBehaviour
             transform.position += new Vector3(0, moveSpeed*70, 0);
             grounded = false;
         }
+
+        
     }
 
+    
     
 }
